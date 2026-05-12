@@ -1,0 +1,334 @@
+/*Design System*/
+
+/*Colors*/
+:root{
+    --white: #fdfdfc;
+    --gray: #8c7e74;
+    --gold: #b8953c;
+    --classic: #2c4a65;
+    --collection: #ca2935;
+    --pandoro: #0db897;
+    --corte: #b3b585;
+}
+
+/*Fonts*/
+@font-face {
+    font-family: "BebasNeue Light";
+    src: url(../fonts/BebasNeue-Light.otf);
+}
+
+@font-face {
+    font-family: "BebasNeue Regular";
+    src: url(../fonts/BebasNeue-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Friz Quadrata Std";
+    src: url(../fonts/FrizQuadrataStd.otf);
+}
+
+@font-face {
+    font-family: "Garamond";
+    src: url(../fonts/GARAMOND.OTF);
+}
+
+@font-face {
+    font-family: "UniversLTStd-Cn";
+    src: url(../fonts/UniversLTStd-Cn.otf);
+}
+
+/*Text styles*/
+h1 {
+    font-size: 4rem;
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: "BebasNeue Regular";
+}
+
+h2{
+    font-size: 3.5rem;
+    text-align: left;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    font-family: "BebasNeue Regular";
+}
+
+h3{
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: 0;
+    margin-bottom: 0.6em;
+    margin-top: 1.6em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+h4{
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: black;
+    text-align: center;
+}
+
+h5 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    color: var(--gold);
+}
+
+p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/*Navbar*/
+header{
+    border-bottom: 2px solid var(--gold);
+    padding: 1.2em;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--white);
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    justify-items: end;
+    padding: 15px 5%;
+    justify-self: center;
+    width: 90%;
+}
+
+#logo{
+    grid-column: 2;
+    min-width: 250px;
+}
+
+#menu-options{
+    grid-column: 3;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3rem;
+    align-items: center;
+}
+
+#lang{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 1em;
+    justify-content: flex-end;
+}
+
+#lang a{
+    text-decoration: none;
+    color: var(--gold);
+    font-size: 1.1rem;
+    text-underline-offset: 2px;
+}
+
+#lang a:hover{
+    text-decoration: underline;
+}
+
+#current{
+    text-decoration: underline !important;
+}
+
+#hamburguer{
+    box-sizing: border-box;
+}
+
+#hamburguer button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 44px;
+    height: 26px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--gold);
+    transition: 0.5s;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+}
+
+.overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+}
+
+.overlay-content a {
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-decoration: none;
+    width: fit-content;
+}
+
+.underline{
+    position: relative;
+}
+
+.underline::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    transition: width 0.3s;
+    background-color: var(--gold);
+    height: 2px;
+}
+
+.underline:hover::before{
+    width: 100%;
+}
+
+#hamburguer button.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+#hamburguer button.active .line:nth-child(2) {
+    opacity: 0;
+}
+#hamburguer button.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+/*Base*/
+html{
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 80%;
+}
+
+body{
+    margin: 0;
+    font-family: "UniversLTStd-Cn";
+    background-color: var(--white);
+}
+
+
+/*Footer*/
+footer{
+    background-color: var(--gold);
+    margin-top: 10%;
+    color: var(--white);
+    padding-top: 4em;
+}
+
+#footer-content{
+    display: flex;
+    gap: 3em;
+    margin: 0 auto;
+    padding: 0 5%;
+    width: 80%;
+    justify-content: space-between;
+    justify-self: center;
+}
+
+#footer-content h4{
+    color: var(--white);
+    text-align: left;
+}
+
+#footer-content img{
+    width: 100%;
+    max-width: 150px;
+    filter: brightness(10);
+    display: flex;
+    align-self: center;
+}
+
+#footer-content h4{
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#footer-content a, #footer-content li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--white);
+    text-decoration: none;
+}
+
+#footer-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+#footer-content ul li {
+    margin-bottom: 1em;
+}
+
+#footer-content a:hover{
+    text-decoration: underline;
+}
+
+.footer-contact{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+#footer-bottom {
+    text-align: center;
+    margin-top: 2em;
+    padding: 1em 0;
+    padding-top: 1em;
+    border-top: 1px solid var(--white);
+    font-size: 0.75rem;
+    color: var(--white);
+}
+
+#footer-bottom p{
+    color: var(--white);
+    font-size: 1rem;
+    font-family: "UniversLTStd-Cn" !important;
+}
+
+.blind-text{
+    color: var(--gray);
+}

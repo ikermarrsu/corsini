@@ -1,0 +1,82 @@
+#lines{
+    margin-top: 8%;
+}
+
+#lines-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: end;
+    gap: 1.2em;
+    margin: 7% 0;
+}
+
+#lines-grid img {
+    width: 100%;
+}
+
+h2{
+    font-weight: 200;
+    text-align: center !important;
+}
+
+.lines-card{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    position: relative;
+}
+
+.lines-card a{
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+}
+
+.lines-card a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#classic, #collection{
+    scroll-margin-top: 160px;
+}
+
+.under-tittle{
+    border: none;
+    height: 1px;
+    background-color: var(--gold);
+    margin-bottom: 2em;
+}
+
+.panettones {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.panettone-card, .pandoro-card {
+    text-align: center;
+    text-decoration: none;
+}
+
+.panettone-card img, .pandoro-card img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+#pandoro-corte{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+

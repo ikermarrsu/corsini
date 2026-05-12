@@ -1,0 +1,41 @@
+#hero {
+    padding: 6em 0 3em;
+    text-align: center;
+}
+
+#hero-content h5 {
+    color: black;
+}
+
+/*Phases*/
+.step-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 6% 0;
+    border-bottom: 1px solid var(--gold);
+}
+
+.step-info {
+    padding: 10%;
+}
+
+.step-info h3{
+    font-size: 3rem;
+    margin: 0;
+}
+
+.step-visual img {
+    width: 100%;
+}
+
+.step-detail:nth-child(even) {
+    direction: rtl;
+}
+.step-detail:nth-child(even) .step-info {
+    direction: ltr;
+}
+
+#step-07{
+    border-bottom: none;
+}
