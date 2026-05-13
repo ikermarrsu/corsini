@@ -65,6 +65,7 @@ h3{
     margin-top: 1.6em;
     letter-spacing: 2px;
     text-transform: uppercase;
+    
 }
 
 h4{
@@ -78,7 +79,7 @@ h4{
 h5 {
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: var(--gold);
 }
 
