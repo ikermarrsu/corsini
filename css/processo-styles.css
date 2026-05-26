@@ -1,0 +1,94 @@
+#hero {
+    text-align: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+}
+
+#hero-content h5 {
+    color: black;
+}
+
+/*Phases*/
+.step-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 6% 0;
+    border-bottom: 1px solid var(--gold);
+}
+
+.step-info {
+    padding: 10%;
+}
+
+.step-info h3{
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.step-visual img {
+    width: 100%;
+}
+
+.step-detail:nth-child(even) {
+    direction: rtl;
+}
+.step-detail:nth-child(even) .step-info {
+    direction: ltr;
+}
+
+#step-07{
+    border-bottom: none;
+}
+
+@media (max-width: 920px){
+    .step-info h3{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 760px){
+    .step-detail{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1.5rem;
+    }
+
+    .step-info {
+        padding: 0;
+        padding-bottom: 2rem;
+    }
+
+    h3, h5{
+        text-align: center;
+    }
+
+    h5{
+        margin: 2rem 0 1rem;
+    }
+
+    p{
+        margin-top: 2.1rem;
+    }
+}
+
+@media (max-width: 300px){
+    h1 {
+        font-size: 2rem;
+    }
+
+    .step-info h3{
+        font-size: 1.4rem;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    h5{
+        font-size: 0.8rem;
+    }
+}
