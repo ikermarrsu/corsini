@@ -92,5 +92,8 @@ h3 {
     h3{
         text-align: center;
     }
-
+    
+    main{
+        gap: 3em;
+    }
 }

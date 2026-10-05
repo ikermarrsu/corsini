@@ -107,6 +107,7 @@ nav{
     padding: 15px 5%;
     justify-self: center;
     width: 90%;
+    gap: 20px;
 }
 
 #logo{
@@ -192,7 +193,7 @@ nav{
 .overlay-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -248,7 +249,7 @@ html{
 main{
     display: flex;
     flex-direction: column;
-    justify-self: center;
+    margin: 0 auto;
     width: 80%;
 }
 
@@ -264,7 +265,7 @@ footer{
     background-color: var(--gold);
     margin-top: 10%;
     color: var(--white);
-    padding-top: 4em;
+    padding-top: 3em;
 }
 
 #footer-content{
@@ -283,11 +284,8 @@ footer{
 }
 
 #footer-content img{
-    width: 100%;
-    max-width: 150px;
+    width: 250px;
     filter: brightness(10);
-    display: flex;
-    align-self: center;
 }
 
 #footer-content h4{
@@ -300,6 +298,7 @@ footer{
     line-height: 1.6;
     color: var(--white);
     text-decoration: none;
+    display: flex;
 }
 
 #footer-content ul {
@@ -338,8 +337,13 @@ footer{
     padding: 0 20%;
 }
 
-.blind-text{
-    color: var(--gray);
+#footer-bottom a{
+    color: var(--white);
+    text-decoration: none;
+}
+
+#footer-bottom a:hover{
+    text-decoration: underline;
 }
 
 
@@ -359,11 +363,18 @@ footer{
     }
 
     .overlay-content{
-        gap: 1rem;
+        gap: 2rem;
     }
     
     #menu-options{
         grid-template-columns: auto;
+    }
+}
+
+@media (max-width:690px){
+
+    #footer-content img{
+        width: 200px;
     }
 }
 
@@ -387,6 +398,11 @@ footer{
     .footer-contact{
         justify-content: center;
     }
+
+    #footer-content a, #footer-content li {
+    justify-content: center;
+}
+    
 }
 
 @media (max-width: 450px){
@@ -411,9 +427,26 @@ footer{
         font-size: 1rem;
         margin: 0.4rem 0 2rem;
     }
+
+    #hamburguer button {
+        width: 35px;
+    }
 }
-    
+
 @media (max-width: 235px){
+    nav {
+        gap: 0;
+    }
+
+    #hamburguer button {
+        width: 26px;
+        padding: 0;
+    }
+
+    #hamburguer button.active .line:nth-child(3) {
+        transform: translateY(-13px) rotate(-45deg);
+    }
+
     .overlay-content a {
         font-size: 1.5rem;
     }

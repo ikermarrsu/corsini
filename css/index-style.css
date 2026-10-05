@@ -1,3 +1,26 @@
+.product-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.feature-item i{
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 5%;
+    display: block;
+}
+
+.feature-item span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
 .no-scroll{
     overflow: hidden;
     height: 100vh;
@@ -129,7 +152,7 @@ main{
     gap: 4rem;
 }
 
-#lines{
+#prodotti{
     margin-top: 5rem;
     scroll-margin-top: 10rem;
 }
@@ -178,33 +201,238 @@ h2{
     cursor: pointer;
 }
 
-#classic, #collection {
+#centenario-line{
+    grid-column: span 2;
+}
+
+#centenario-photos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em;
+
+}
+
+#classic, #collection, #pandoro, #pan-corte, #centenario{
     max-height: 0;
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
     transition: opacity 0.6s ease, max-height 0.6s ease;
-    scroll-margin-top: 160px; 
+    scroll-margin-top: 60px; 
 }
 
-
-#classic.show-section, #collection.show-section {
+#classic.show-section, #collection.show-section, #pandoro.show-section, #pan-corte.show-section, #centenario.show-section{
     max-height: unset;
     opacity: 1;
     visibility: visible;
 }
 
+.tittle{
+    padding: 5rem 8%;
+    color: var(--white);
+    margin: 6% 0 2%;
+}
+
+#classic-tittle{
+    background-color: var(--classic);
+}
+
+#collection-tittle{
+    background-color: var(--collection);
+}
+
+#pandoro-tittle{
+    background-color: var(--pandoro);
+}
+
+#corte-tittle{
+    background-color: var(--corte);
+}
+
 .under-tittle{
     border: none;
     height: 1px;
+    background-color: var(--white);
+    margin-top: 2em;
+    width: 50%;
+}
+
+#centenario-tittle{
+    color: var(--gold)
+}
+
+#centenario-under-tittle{
     background-color: var(--gold);
+}
+
+.linea-title, p{
+    text-transform: none;
+}
+
+#back {
+    position: fixed;
+    left: 2%;
+    top: 0;
+    z-index: 2;
+    color: black;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s ease;
+    background-color: var(--white);
+}
+
+#back.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-arrow{
+    height: 1em;
+    stroke-width: 3px;
+    overflow: visible;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 80%;
+    gap: 3em;
+    margin: 0 auto;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    margin: 2% 0;
+    min-height: 75vh;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card h3{
+    font-size: 2.5rem;
+}
+
+.big {
+    margin-bottom: 0;
+}
+
+.small{
+    font-weight: bold;
+    text-align: left;
+    margin-top: 0.8em;
     margin-bottom: 2em;
+    text-transform: uppercase;
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
+}
+
+.card a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.card:nth-child(odd) {
+    direction: rtl;
+}
+
+.card:nth-child(odd) .card-info {
+    direction: ltr; 
+    text-align: left;
+}
+
+
+.feature-item i{
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 5%;
+    display: block;
+}
+
+.feature-item span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+#classico, #glassato, #cioccolato, #pere, #albicocca, #senza, #lampone, #pasta-scura, #mandarino, #biologico{
+    scroll-margin-top: 150px;
+}
+
+.collection-tittle{
+    font-family: "BebasNeue Regular";
+    font-size: 4rem;
+}
+
+.collection-subtittle{
+    font-family: "BebasNeue Light";
+    font-size: 4rem;
+}
+
+h3{
+    font-family: "BebasNeue Regular";
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+.lead {
+    margin-top: 4em;
+    font-size: 1.1rem;
+}
+
+.under-tittle{
+    border: none;
+    height: 1px;
+    background-color: var(--white);
+    margin-top: 2em;
+    width: 50%;
 }
 
 .panettones {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    margin-top: 3.5em;
+    gap: 1rem;
+}
+
+.panettones-names {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    margin-bottom: 3.5em;
+}
+
+.panettones-names h4 {
+    margin-top: 0;
 }
 
 .panettone-card, .pandoro-card {
@@ -218,18 +446,16 @@ h2{
     margin-bottom: 15px;
 }
 
-.panettones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    width: 100%;
-}
-
 .panettone-card {
     display: block;
     width: 100%;
     text-decoration: none;
     text-align: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.panettone-card:hover {
+    transform: translateY(-8px);
 }
 
 .panettone-card img {
@@ -237,12 +463,63 @@ h2{
     margin: 0 auto 15px auto;
 }
 
-#pandoro-corte{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 50px;
+.panettone-card h4, .panettones-names h4{
+    text-transform: uppercase;
 }
 
+@media (max-width: 865px){
+    .panettones{
+        display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .card{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 2rem 0;
+        justify-content: center;
+    }
+
+    .card h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.4em;
+    }
+
+    .tittle{
+        margin: 5rem 0 3rem;
+    }
+
+    .lead{
+        margin-top: 3em;
+    }
+    
+    .collection-tittle, .collection-subtittle{
+        font-size: 3rem;
+    }
+
+    main{
+        width: 85%;
+    }
+
+    #lines {
+        margin-top: 3rem;
+    }
+
+    .lines-card {
+        gap: 2em;
+    }
+
+    
+    #lines-grid {
+        gap: 3em 3em;
+    }
+
+    .contenedor {
+        gap: 0em;
+    }
+}
 
 @media (max-width: 450px){
     #hero-btn {

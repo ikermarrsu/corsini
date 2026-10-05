@@ -11,6 +11,11 @@
     color: black;
 }
 
+
+main{
+    gap: 3.5em;
+}
+
 /*Phases*/
 .step-detail {
     display: grid;
